@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Routes for the Character resource:
   # CREATE
   get "/characters/new", :controller => "characters", :action => "new"
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get "/delete_actor/:id", :controller => "actors", :action => "destroy"
   #------------------------------
 
+  root to: 'movies#index'
   get "/", :controller => "movies", :action => "index"
 
   # Routes for the Movie resource:
